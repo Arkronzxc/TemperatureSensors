@@ -1,4 +1,4 @@
-package com.github.arkronzxc.temperaturesensors.resourse.models;
+package com.github.arkronzxc.temperaturesensors.data.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;

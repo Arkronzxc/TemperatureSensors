@@ -1,8 +1,9 @@
 package com.github.arkronzxc.temperaturesensors.resourse.controllers;
 
+import com.github.arkronzxc.temperaturesensors.data.models.UserModel;
 import com.github.arkronzxc.temperaturesensors.resourse.dao.CityService;
-import com.github.arkronzxc.temperaturesensors.resourse.models.CityOnlineModel;
-import com.github.arkronzxc.temperaturesensors.resourse.models.CityWeatherModel;
+import com.github.arkronzxc.temperaturesensors.data.models.CityOnlineModel;
+import com.github.arkronzxc.temperaturesensors.data.models.CityWeatherModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,4 +30,5 @@ public class CityController {
             throws IOException, URISyntaxException {
         return ResponseEntity.ok(cityService.getOnlineCityInfo(cityName));
     }
+
 }

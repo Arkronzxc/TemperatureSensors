@@ -1,6 +1,6 @@
 package com.github.arkronzxc.temperaturesensors.resourse.exceptions.handlers;
 
-import com.github.arkronzxc.temperaturesensors.resourse.exceptions.CustomWebException;
+import com.github.arkronzxc.temperaturesensors.data.exceptions.CustomWebException;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;

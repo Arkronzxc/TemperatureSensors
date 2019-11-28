@@ -1,4 +1,5 @@
 rootProject.name = 'temperaturesensors'
 include 'auth-module'
 include 'resource-module'
+include 'data-module'
 

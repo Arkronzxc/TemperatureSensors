@@ -1,9 +1,9 @@
 package com.github.arkronzxc.temperaturesensors.resourse.apiclient;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.arkronzxc.temperaturesensors.resourse.exceptions.CustomWebException;
-import com.github.arkronzxc.temperaturesensors.resourse.models.CityOnlineModel;
-import com.github.arkronzxc.temperaturesensors.resourse.models.CityWeatherModel;
+import com.github.arkronzxc.temperaturesensors.data.exceptions.CustomWebException;
+import com.github.arkronzxc.temperaturesensors.data.models.CityOnlineModel;
+import com.github.arkronzxc.temperaturesensors.data.models.CityWeatherModel;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;

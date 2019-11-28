@@ -1,8 +1,8 @@
 package com.github.arkronzxc.temperaturesensors.resourse.dao.schedulers;
 
 import com.github.arkronzxc.temperaturesensors.resourse.apiclient.CityApiClient;
-import com.github.arkronzxc.temperaturesensors.resourse.models.CityWeatherModel;
-import com.github.arkronzxc.temperaturesensors.resourse.repositories.CityWeatherRepository;
+import com.github.arkronzxc.temperaturesensors.data.models.CityWeatherModel;
+import com.github.arkronzxc.temperaturesensors.data.models.repositories.CityWeatherRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;

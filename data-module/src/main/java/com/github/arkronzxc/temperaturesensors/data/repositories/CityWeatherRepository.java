@@ -1,6 +1,6 @@
-package com.github.arkronzxc.temperaturesensors.resourse.repositories;
+package com.github.arkronzxc.temperaturesensors.data.repositories;
 
-import com.github.arkronzxc.temperaturesensors.resourse.models.CityWeatherModel;
+import com.github.arkronzxc.temperaturesensors.data.models.CityWeatherModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

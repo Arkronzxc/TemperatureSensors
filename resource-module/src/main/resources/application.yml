@@ -1,0 +1,28 @@
+api:
+  openweathermap:
+    key: 52c2bc7694a02ca054165b9fb26e35ae
+    url:
+      base: api.openweathermap.org/data/2.5/
+      forecast: forecast
+      online: weather
+
+auth:
+  config:
+    key:
+      public: secretkey
+
+server:
+  port: 8000
+
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    url: jdbc:postgresql://localhost:5432/temperature_project
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver

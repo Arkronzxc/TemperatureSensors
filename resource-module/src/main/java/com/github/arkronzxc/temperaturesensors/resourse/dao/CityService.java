@@ -1,10 +1,10 @@
 package com.github.arkronzxc.temperaturesensors.resourse.dao;
 
+import com.github.arkronzxc.temperaturesensors.data.repositories.CityWeatherRepository;
 import com.github.arkronzxc.temperaturesensors.resourse.apiclient.CityApiClient;
-import com.github.arkronzxc.temperaturesensors.resourse.exceptions.CustomWebException;
-import com.github.arkronzxc.temperaturesensors.resourse.models.CityOnlineModel;
-import com.github.arkronzxc.temperaturesensors.resourse.models.CityWeatherModel;
-import com.github.arkronzxc.temperaturesensors.resourse.repositories.CityWeatherRepository;
+import com.github.arkronzxc.temperaturesensors.data.exceptions.CustomWebException;
+import com.github.arkronzxc.temperaturesensors.data.models.CityOnlineModel;
+import com.github.arkronzxc.temperaturesensors.data.models.CityWeatherModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.github.arkronzxc.temperaturesensors.resourse.exceptions;
+package com.github.arkronzxc.temperaturesensors.data.exceptions;
 
 import org.springframework.http.HttpStatus;
 
