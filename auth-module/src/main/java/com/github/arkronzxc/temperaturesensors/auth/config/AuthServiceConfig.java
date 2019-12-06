@@ -2,6 +2,7 @@ package com.github.arkronzxc.temperaturesensors.auth.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -34,27 +35,28 @@ public class AuthServiceConfig extends AuthorizationServerConfigurerAdapter {
     private String publicKey;
 
     @Autowired
+    @Qualifier("authenticationManagerBean")
     private AuthenticationManager authenticationManager;
 
     @Bean
-    public JwtAccessTokenConverter tokenConverter(){
+    public JwtAccessTokenConverter tokenConverter() {
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-        converter.setSigningKey(publicKey);
+        converter.setSigningKey("secretKey");
         return converter;
     }
 
     @Bean
-    public JwtTokenStore tokenStore(){
+    public JwtTokenStore tokenStore() {
         return new JwtTokenStore(tokenConverter());
     }
 
     @Bean
     @Primary
-    public DefaultTokenServices tokenServices(){
+    public DefaultTokenServices tokenServices() {
         DefaultTokenServices defaultTokenServices = new DefaultTokenServices();
         defaultTokenServices.setTokenStore(tokenStore());
         defaultTokenServices.setSupportRefreshToken(true);
-        return  defaultTokenServices;
+        return defaultTokenServices;
     }
 
     @Override
@@ -68,8 +70,8 @@ public class AuthServiceConfig extends AuthorizationServerConfigurerAdapter {
                 .withClient(clientId)
                 .secret(passwordEncoder
                         .encode(clientSecret))
-                .scopes("read","write")
-                .authorizedGrantTypes("password","refresh_token")
+                .scopes("read", "write")
+                .authorizedGrantTypes("password", "refresh_token")
                 .accessTokenValiditySeconds(20000)
                 .refreshTokenValiditySeconds(20000);
     }

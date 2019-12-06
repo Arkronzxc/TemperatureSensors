@@ -7,10 +7,11 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 
+
 @EnableAuthorizationServer
 @SpringBootApplication
 @EnableJpaRepositories("com.github.arkronzxc.temperaturesensors.data.repositories")
-@EntityScan("com.github.arkronzxc.temperaturesensors.data")
+@EntityScan("com.github.arkronzxc.temperaturesensors.data.models")
 @ComponentScan({"com.github.arkronzxc.temperaturesensors.data", "com.github.arkronzxc.temperaturesensors.auth"})
 public class AuthModuleApplication {
     public static void main(String[] args) {

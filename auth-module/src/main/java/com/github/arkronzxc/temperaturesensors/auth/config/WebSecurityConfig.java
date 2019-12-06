@@ -1,7 +1,6 @@
 package com.github.arkronzxc.temperaturesensors.auth.config;
 
 import com.github.arkronzxc.temperaturesensors.data.repositories.CustomUserDetailsService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
@@ -20,11 +19,14 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-    @Autowired
-    private CustomUserDetailsService detailsService;
+    private final CustomUserDetailsService detailsService;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder;
+
+    public WebSecurityConfig(CustomUserDetailsService detailsService, PasswordEncoder passwordEncoder) {
+        this.detailsService = detailsService;
+        this.passwordEncoder = passwordEncoder;
+    }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -46,9 +48,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .and()
-                    .antMatcher("/**")
-                    .authorizeRequests()
+                    .antMatchers("/**")
+                    .authenticated()
                 .and()
                     .sessionManagement()
                     .sessionCreationPolicy(SessionCreationPolicy.NEVER);

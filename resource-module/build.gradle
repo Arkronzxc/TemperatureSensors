@@ -1,5 +1,10 @@
+plugins {
+    id "org.springframework.boot"
+    id "java"
+}
+
 dependencies {
-    compile project(':data-module')
-    implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
-    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.10'
+    implementation project(":data-module")
+    implementation "org.springframework.boot:spring-boot-starter-oauth2-resource-server"
+    compile group: "org.apache.httpcomponents", name: "httpclient", version: "4.5.10"
 }

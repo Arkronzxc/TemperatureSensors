@@ -31,8 +31,7 @@ spring:
     driver-class-name: org.postgresql.Driver
 app:
   auth:
-    tokenSecret: 926D9
-    6C90030DD58429D2751AC1BDBBC
+    tokenSecret: 926D96C90030DD58429D2751AC1BDBBC
     tokenExpirationMsec: 864000000
   oauth2:
     # After successfully authenticating with the OAuth2 Provider,

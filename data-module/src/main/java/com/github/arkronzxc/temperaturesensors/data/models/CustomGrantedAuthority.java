@@ -2,12 +2,14 @@ package com.github.arkronzxc.temperaturesensors.data.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
 
 @Entity
 @Data
+@NoArgsConstructor
 @Table(name = "authorities_table")
 public class CustomGrantedAuthority implements GrantedAuthority {
 
@@ -24,7 +26,7 @@ public class CustomGrantedAuthority implements GrantedAuthority {
         return authority.name();
     }
 
-    public CustomGrantedAuthority(Role authority) {
+    CustomGrantedAuthority(Role authority) {
         this.authority = authority;
     }
 }

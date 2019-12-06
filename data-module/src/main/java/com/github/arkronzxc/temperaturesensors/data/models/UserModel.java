@@ -3,6 +3,7 @@ package com.github.arkronzxc.temperaturesensors.data.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
@@ -11,6 +12,7 @@ import java.util.Collection;
 
 @Data
 @Entity
+@NoArgsConstructor
 @Table(name = "user_table")
 public class UserModel {
 
@@ -31,7 +33,7 @@ public class UserModel {
 
     @JoinColumn(name = "role_id")
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private GrantedAuthority authority;
+    private CustomGrantedAuthority authority;
 
     public UserModel(UserRegistrationModel model) {
         this.username = model.getUsername();

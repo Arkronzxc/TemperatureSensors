@@ -12,10 +12,10 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableJpaRepositories("com.github.arkronzxc.temperaturesensors.data.repositories")
 @EntityScan("com.github.arkronzxc.temperaturesensors.data")
 @ComponentScan({"com.github.arkronzxc.temperaturesensors.data", "com.github.arkronzxc.temperaturesensors.resourse"})
-public class TemperaturesensorsApplication {
+public class TemperatureSensorsApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TemperaturesensorsApplication.class, args);
+        SpringApplication.run(TemperatureSensorsApplication.class, args);
     }
 
 }
