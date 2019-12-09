@@ -62,7 +62,7 @@ public class ResourceSecurityConfig extends ResourceServerConfigurerAdapter {
     @Bean
     public JwtAccessTokenConverter accessTokenConverter() {
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-        converter.setSigningKey("secretKey"); // symmetric key
+        converter.setSigningKey(publicKey); // symmetric key
         return converter;
     }
 
